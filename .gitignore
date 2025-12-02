@@ -1,0 +1,19 @@
+# Claude Code
+.claude/
+CLAUDE.md
+
+# Project notes
+guide.txt
+hypothesis.md
+
+# Virtual environment
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store

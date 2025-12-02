@@ -1,0 +1,345 @@
+=== Cell 4 Output ===
+Dataset shape: (5396, 314)
+Number of census tracts: 5396
+
+Columns: ['GISJOIN', 'YEAR', 'STUSAB', 'REGIONA', 'DIVISIONA', 'STATE', 'STATEA', 'COUNTY', 'COUNTYA', 'COUSUBA', 'PLACEA', 'TRACTA', 'BLKGRPA', 'CONCITA', 'AIANHHA', 'RES_ONLYA', 'TRUSTA', 'AIHHTLI', 'AITSA', 'ANRCA']...
+
+
+=== Cell 5 Result ===
+          GISJOIN         COUNTY  TRACTA  \
+0  G3600010000100  Albany County     100   
+1  G3600010000201  Albany County     201   
+2  G3600010000202  Albany County     202   
+3  G3600010000301  Albany County     301   
+4  G3600010000302  Albany County     302   
+
+                                       NAME_E  ASN1E001  ASORE001  ASORE003  \
+0     Census Tract 1, Albany County, New York      2156       632       243   
+1  Census Tract 2.01, Albany County, New York      2519      1107       318   
+2  Census Tract 2.02, Albany County, New York      2436      1366       667   
+3  Census Tract 3.01, Albany County, New York      2378      1053       433   
+4  Census Tract 3.02, Albany County, New York      3273      1875       981   
+
+   ASORE010  ASORE021  ASOTE001  ASOTE002  ASOTE003  ASOTE004  ASOTE005  \
+0       185         0       632         5        22       142        86   
+1       238       114       993         0        14       298       337   
+2       253        25      1341         0       227       272       229   
+3       387         0      1053         0         0       138       143   
+4       184       297      1578        18       282       592       161   
+
+   ASOTE006  ASOTE007  ASOTE008  ASOTE009  ASOTE010  ASOTE011  ASOTE012  \
+0        24        44       180         0         9        35        28   
+1        79        38        18         0        42        92        75   
+2        38        33       235        28        40       222         0   
+3       209       144       191         0         0       133        95   
+4       217       137        47         0         0        57        36   
+
+   ASOTE013  ASQPE001  
+0        57     46797  
+1         0     37218  
+2        17     34160  
+3         0     45547  
+4        31     54375  
+
+=== Cell 6 Output ===
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 5396 entries, 0 to 5395
+Data columns (total 23 columns):
+ #   Column            Non-Null Count  Dtype 
+---  ------            --------------  ----- 
+ 0   GISJOIN           5396 non-null   object
+ 1   COUNTY            5396 non-null   object
+ 2   TRACTA            5396 non-null   int64 
+ 3   NAME_E            5396 non-null   object
+ 4   total_population  5396 non-null   int64 
+ 5   total_workers     5396 non-null   int64 
+ 6   drove_alone       5396 non-null   int64 
+ 7   public_transit    5396 non-null   int64 
+ 8   work_from_home    5396 non-null   int64 
+ 9   commuters_total   5396 non-null   int64 
+ 10  ASOTE002          5396 non-null   int64 
+ 11  ASOTE003          5396 non-null   int64 
+ 12  ASOTE004          5396 non-null   int64 
+ 13  ASOTE005          5396 non-null   int64 
+ 14  ASOTE006          5396 non-null   int64 
+ 15  ASOTE007          5396 non-null   int64 
+ 16  ASOTE008          5396 non-null   int64 
+ 17  ASOTE009          5396 non-null   int64 
+ 18  ASOTE010          5396 non-null   int64 
+ 19  ASOTE011          5396 non-null   int64 
+ 20  ASOTE012          5396 non-null   int64 
+ 21  ASOTE013          5396 non-null   int64 
+ 22  median_income     5396 non-null   int64 
+dtypes: int64(20), object(3)
+memory usage: 969.7+ KB
+
+
+=== Cell 7 Output ===
+=== Data Quality Assessment ===
+
+Total census tracts: 5396
+Tracts with missing/suppressed income: 214 (4.0%)
+Tracts with zero workers: 124
+
+Null values per column:
+GISJOIN             0
+COUNTY              0
+TRACTA              0
+NAME_E              0
+total_population    0
+total_workers       0
+drove_alone         0
+public_transit      0
+work_from_home      0
+commuters_total     0
+ASOTE002            0
+ASOTE003            0
+ASOTE004            0
+ASOTE005            0
+ASOTE006            0
+ASOTE007            0
+ASOTE008            0
+ASOTE009            0
+ASOTE010            0
+ASOTE011            0
+ASOTE012            0
+ASOTE013            0
+median_income       0
+dtype: int64
+
+
+=== Cell 8 Output ===
+NY State tracts after cleaning: 5182
+NYC tracts: 2192
+
+Borough breakdown:
+  Manhattan: 297 tracts
+  Brooklyn: 770 tracts
+  Queens: 674 tracts
+  Bronx: 334 tracts
+  Staten Island: 117 tracts
+
+
+=== Cell 10 Output ===
+Derived variables created successfully!
+
+
+=== Cell 11 Output ===
+=== Summary Statistics ===
+       median_income  pct_drove_alone  pct_public_transit  avg_commute_time  \
+count        2192.00          2192.00             2192.00           2192.00   
+mean        88549.24            24.89               44.63             45.28   
+std         42443.02            16.92               15.68              8.16   
+min         11612.00             0.00                0.00             14.29   
+25%         60240.75            10.78               33.76             40.77   
+50%         81981.50            21.92               45.12             46.25   
+75%        107326.75            36.30               56.40             50.63   
+max        250001.00            81.44              100.00             73.49   
+
+       total_workers  
+count        2192.00  
+mean         1789.41  
+std          1014.13  
+min             2.00  
+25%          1073.00  
+50%          1577.00  
+75%          2264.50  
+max          9553.00  
+
+
+=== Cell 12 Output ===
+Public transit usage quartiles:
+  25th percentile: 33.8%
+  75th percentile: 56.4%
+
+Tract classification:
+commute_type
+Mixed                1096
+Car-dominated         548
+Transit-dominated     548
+Name: count, dtype: int64
+
+
+=== Cell 14 Output ===
+Downloading NY census tract geometries (first run may take a minute)...
+Using FIPS code '36' for input 'NY'
+Successfully merged 2192 tracts with geometries
+NYC tracts: 2192
+
+
+=== Cell 14 Output ===
+
+=== NYC Borough Summary ===
+Manhattan       - Transit: 44.8%, Income: $121,528, Commute: 33.5 min
+Brooklyn        - Transit: 47.1%, Income: $86,579, Commute: 46.4 min
+Queens          - Transit: 41.2%, Income: $90,421, Commute: 47.6 min
+Bronx           - Transit: 52.6%, Income: $56,330, Commute: 48.0 min
+Staten Island   - Transit: 25.0%, Income: $98,996, Commute: 46.5 min
+
+
+=== Cell 19 Output ===
+=== Summary Statistics by Commute Type ===
+                  median_income                         avg_commute_time  \
+                           mean   median      std count             mean   
+commute_type                                                               
+Car-dominated         105285.05 99818.00 41047.47   548            42.28   
+Transit-dominated      64479.20 61313.50 31806.01   548            48.50   
+
+                                    pct_public_transit                    \
+                  median  std count               mean median  std count   
+commute_type                                                               
+Car-dominated      44.11 8.63   548              24.10  25.18 6.92   548   
+Transit-dominated  48.78 6.76   548              64.41  62.67 6.48   548   
+
+                  pct_drove_alone                     
+                             mean median   std count  
+commute_type                                          
+Car-dominated               40.11  44.64 18.90   548  
+Transit-dominated           13.78  12.72  7.44   548  
+
+
+=== Cell 21 Output ===
+Car-dominated tracts: n = 548
+Transit-dominated tracts: n = 548
+
+============================================================
+ASSUMPTION CHECK: Normality (Shapiro-Wilk Test)
+============================================================
+Note: For large samples, Shapiro-Wilk is very sensitive.
+      We'll also examine skewness and visual inspection.
+
+
+Median Income:
+  Car-dominated:     Skewness = 1.15, Kurtosis = 2.16
+  Transit-dominated: Skewness = 1.38, Kurtosis = 3.51
+  Shapiro-Wilk Car:     W = 0.9279, p = 1.4598e-15
+  Shapiro-Wilk Transit: W = 0.9132, p = 3.5869e-17
+
+Avg Commute Time:
+  Car-dominated:     Skewness = -0.74, Kurtosis = 0.21
+  Transit-dominated: Skewness = -0.07, Kurtosis = 0.43
+  Shapiro-Wilk Car:     W = 0.9530, p = 3.3547e-12
+  Shapiro-Wilk Transit: W = 0.9955, p = 1.1558e-01
+
+
+=== Cell 22 Output ===
+======================================================================
+TEST SELECTION DECISION
+======================================================================
+
+┌─────────────────┬────────────────────┬─────────────────────────┬─────────────────────┐
+│ Variable        │ Skewness           │ Distribution            │ Test Selected       │
+├─────────────────┼────────────────────┼─────────────────────────┼─────────────────────┤
+│ Median Income   │ 1.15 / 1.38        │ Highly right-skewed     │ Mann-Whitney U      │
+│ Commute Time    │ -0.74 / -0.07      │ Approximately symmetric │ Welch's t-test      │
+└─────────────────┴────────────────────┴─────────────────────────┴─────────────────────┘
+
+Decision Rules:
+  • |Skewness| > 1.0  → Highly skewed    → Use non-parametric test (Mann-Whitney U)
+  • |Skewness| < 0.5  → Approx. symmetric → Use parametric test (t-test)
+  • Levene's test p < 0.05 → Unequal variances → Use Welch's t-test (not standard t-test)
+
+
+
+=== Cell 23 Output ===
+============================================================
+HYPOTHESIS 1: Commute Mode and Median Household Income
+============================================================
+
+Car-dominated tracts (n = 548):
+  Mean income: $105,285
+  Median income: $99,818
+  Std dev: $41,047
+
+Transit-dominated tracts (n = 548):
+  Mean income: $64,479
+  Median income: $61,314
+  Std dev: $31,806
+
+--- Normality Check ---
+  Skewness (Car): 1.147
+  Skewness (Transit): 1.378
+  Interpretation: Both groups are highly right-skewed (|skew| > 1)
+  → Normality assumption VIOLATED → Use Mann-Whitney U test
+
+--- Mann-Whitney U Test ---
+  U-statistic: 244,200
+  p-value: 4.8275e-72
+  Rank-biserial correlation (r): -0.626
+  Effect size interpretation: large
+
+--- Conclusion (α = 0.05) ---
+  REJECT H₀: There IS a significant difference in median income (p < 0.05)
+
+
+=== Cell 24 Output ===
+============================================================
+HYPOTHESIS 2: Commute Mode and Average Commute Time
+============================================================
+
+Car-dominated tracts (n = 548):
+  Mean commute time: 42.3 minutes
+  Median commute time: 44.1 minutes
+  Std dev: 8.6 minutes
+
+Transit-dominated tracts (n = 548):
+  Mean commute time: 48.5 minutes
+  Median commute time: 48.8 minutes
+  Std dev: 6.8 minutes
+
+--- Normality Check ---
+  Skewness (Car): -0.743
+  Skewness (Transit): -0.072
+  Interpretation: Both groups are approximately symmetric (|skew| < 0.5)
+  → Normality assumption is reasonable for large n
+
+--- Levene's Test for Equality of Variances ---
+  W = 18.8388, p = 1.5542e-05
+  Result: Variances are unequal (p ≤ 0.05) → Using Welch's t-test
+
+--- T-test Results ---
+  t-statistic: -13.2940
+  p-value: 2.3953e-37
+  Cohen's d: -0.803 (large effect)
+
+--- Mann-Whitney U (for comparison) ---
+  U-statistic: 88,107
+  p-value: 2.3790e-32
+  Rank-biserial r: 0.413
+
+--- Conclusion (α = 0.05) ---
+  REJECT H₀: There IS a significant difference in commute time (p < 0.05)
+
+
+=== Cell 26 Output ===
+Training samples: 1074 (after dropping NaN)
+
+============================================================
+XGBoost Classification: Predicting Commute Mode
+============================================================
+
+Features used: 8
+Accuracy: 0.893
+
+Classification Report:
+                   precision    recall  f1-score   support
+
+    Car-dominated       0.89      0.90      0.89       106
+Transit-dominated       0.90      0.89      0.89       109
+
+         accuracy                           0.89       215
+        macro avg       0.89      0.89      0.89       215
+     weighted avg       0.89      0.89      0.89       215
+
+
+
+=== Cell 27 Output ===
+
+============================================================
+KEY FINDING: Top Predictors of Commute Mode
+============================================================
+  • Median Income: 0.360
+  • Avg Commute Time: 0.149
+  • Total Workers: 0.097
+
+Model Accuracy: 89.3%
